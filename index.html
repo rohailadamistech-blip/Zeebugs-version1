@@ -240,6 +240,28 @@ html[data-theme="light"] .code-line .s{color:#0C7A80;}
 .portfolio-body h3{font-size:17px;margin-bottom:8px;}
 .portfolio-body p{font-size:14px;color:var(--muted);}
 
+/* ---------- Pricing ---------- */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
+@media (max-width:920px){.pricing-grid{grid-template-columns:1fr;max-width:520px;}}
+.price-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:32px 28px;position:relative;
+  transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;}
+.price-card:hover{border-color:var(--lime);transform:translateY(-4px);box-shadow:var(--shadow);}
+.price-card.featured{border-color:var(--lime);}
+.price-badge{position:absolute;top:-12px;left:28px;background:var(--lime);color:var(--btn-primary-text);
+  font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;}
+.price-card h3{font-size:20px;margin-bottom:8px;}
+.price-desc{font-size:14.5px;color:var(--muted);margin-bottom:22px;min-height:46px;}
+.price-amount{display:flex;align-items:baseline;gap:8px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+.price-amount small{font-size:13px;color:var(--muted);}
+.price-amount strong{font-family:'Space Grotesk',sans-serif;font-size:34px;color:var(--heading);font-weight:600;letter-spacing:-0.02em;}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:30px;flex-grow:1;}
+.price-list li{display:flex;gap:12px;font-size:14.5px;color:var(--text);}
+.price-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--lime);margin-top:9px;flex-shrink:0;}
+.price-card .btn{width:100%;}
+.pricing-note{margin-top:34px;font-size:14px;color:var(--muted);max-width:620px;}
+@media (min-width:981px) and (max-width:1180px){nav.primary-nav{gap:20px;}}
+
 /* ---------- About ---------- */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:start;}
 @media (max-width:880px){.about-grid{grid-template-columns:1fr;gap:40px;}}
@@ -320,6 +342,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 26px;background:var(--bg)
       <a href="#why">Why us</a>
       <a href="#industries">Industries</a>
       <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -546,6 +569,56 @@ footer{border-top:1px solid var(--line);padding:72px 0 26px;background:var(--bg)
     </div>
   </section>
 
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Pricing</span>
+        <h2>Clear packages, quoted to your project</h2>
+        <p class="lede">Start with the package closest to what you need. Every project is confirmed with a fixed quote after a short discovery call, so there are no surprises.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <p class="price-desc">A focused website for a business getting online.</p>
+          <div class="price-amount"><small>From</small><strong>$[X]</strong></div>
+          <ul class="price-list">
+            <li>Up to 5 pages, designed to your brand</li>
+            <li>Mobile-friendly layout</li>
+            <li>Contact form</li>
+            <li>Basic on-page SEO</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost">Get a quote</a>
+        </div>
+        <div class="price-card featured">
+          <span class="price-badge">Most popular</span>
+          <h3>Business</h3>
+          <p class="price-desc">A full website built to bring in and convert leads.</p>
+          <div class="price-amount"><small>From</small><strong>$[X]</strong></div>
+          <ul class="price-list">
+            <li>Up to 15 pages with custom UI/UX design</li>
+            <li>Lead capture forms and analytics setup</li>
+            <li>On-page SEO and speed optimisation</li>
+            <li>Content management so your team can edit pages</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get a quote</a>
+        </div>
+        <div class="price-card">
+          <h3>Custom</h3>
+          <p class="price-desc">Software, mobile apps and larger systems.</p>
+          <div class="price-amount"><strong>Custom quote</strong></div>
+          <ul class="price-list">
+            <li>Web apps, software and mobile app development</li>
+            <li>Integrations with your existing tools</li>
+            <li>Dedicated project lead</li>
+            <li>Ongoing support and maintenance</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost">Talk to us</a>
+        </div>
+      </div>
+      <p class="pricing-note">Not sure which package fits? Tell us what you are building and we will recommend one.</p>
+    </div>
+  </section>
+
   <section id="about" class="alt">
     <div class="wrap about-grid">
       <div>
@@ -650,6 +723,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 26px;background:var(--bg)
         <h4>Company</h4>
         <a href="/about/">About</a>
         <a href="/portfolio/">Portfolio</a>
+        <a href="#pricing">Pricing</a>
         <a href="/blog/">Blog</a>
         <a href="#contact">Contact</a>
       </div>
